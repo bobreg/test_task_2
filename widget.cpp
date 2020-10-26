@@ -46,8 +46,9 @@ void Widget::on_pushButton_3_clicked()
 }
 
 
-void Widget::pull_points(QVector <coordinate> points){
+void Widget::pull_points(const QVector <coordinate> & points){
     for(auto i: points){
         qDebug() << i.x << i.y;
+        // нужно сделать корректное завершение программы
     }
 }

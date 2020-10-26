@@ -28,7 +28,7 @@ private slots:
     void on_pushButton_3_clicked();
 
 public slots:
-    void pull_points(QVector <coordinate>);
+    void pull_points(const QVector <coordinate> &);
 
 signals:
     void start_thread();

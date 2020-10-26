@@ -2,7 +2,7 @@
 
 MainLogic::MainLogic(QObject *parent) : QObject(parent)
 {
-
+    qRegisterMetaType <coordinate> ( "coordinate" ) ;
     connect(timer, &QTimer::timeout, this, &MainLogic::my_rand);
 }
 
@@ -24,7 +24,7 @@ void MainLogic::my_rand(){
         qDebug() << i.x << i.y;
     }
     */
-    emit send_list_points(points);
+    emit send_list_points((&points)[0]);
 }
 
 void MainLogic::start_stop_timer(bool flag = true){

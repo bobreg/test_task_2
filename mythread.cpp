@@ -9,7 +9,7 @@ MyThread::MyThread(QObject *parent) : QThread(parent)
 void MyThread::run(){
     MainLogic return_xy;
     connect(this, &MyThread::pause_th, &return_xy, &MainLogic::start_stop_timer);
-    connect(&return_xy, &MainLogic::send_list_points, this, &MyThread::send_list_points);
+    connect(&return_xy, &MainLogic::send_list_points, this, &MyThread::send_list_points, Qt::QueuedConnection);
     return_xy.start_stop_timer(true);
     exec();
 }

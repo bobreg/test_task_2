@@ -1,12 +1,12 @@
 #include "widget.h"
 #include "mythread.h"
-#include "xy_struct.h"
 
 #include <QApplication>
-
+Q_DECLARE_METATYPE ( coordinate );
 
 int main(int argc, char *argv[])
 {
+
     QApplication a(argc, argv);
     Widget w;
     MyThread t;
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     QApplication::connect(&w, &Widget::pause_thread, &t, &MyThread::pause_th);
     QApplication::connect(&w, &Widget::stop_thread, &t, &MyThread::stop_th);
 
-    QApplication::connect(&t, &MyThread::send_list_points, &w, &Widget::pull_points);
+    QApplication::connect(&t, &MyThread::send_list_points, &w, &Widget::pull_points, Qt::QueuedConnection);
     w.show();
     return a.exec();
 }

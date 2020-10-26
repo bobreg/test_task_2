@@ -20,7 +20,7 @@ private:
 
 signals:
     void pause_th(bool);
-    void send_list_points(QVector <coordinate>);
+    void send_list_points(const QVector <coordinate> &);
 
 public slots:
     void start_th();

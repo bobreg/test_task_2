@@ -17,7 +17,7 @@ private:
     QTimer *timer = new QTimer;
 
 signals:
-    void send_list_points(QVector <coordinate>);
+    void send_list_points(const QVector <coordinate> &);
 
 public slots:
     void start_stop_timer(bool);
