@@ -1,7 +1,9 @@
+#define COUNT_POINTS 10  // Количество генерируемых точек
+
 #ifndef XY_STRUCT_H
 #define XY_STRUCT_H
-// Q_DECLARE_METATYPE(coordinate::MyType);
 
+// структура хранящая в себе координату х и у одной сгенерированной точки
 struct coordinate{
     int x;
     int y;

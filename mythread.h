@@ -3,8 +3,9 @@
 
 #include <QObject>
 #include <QThread>
-#include <QDebug>
 #include "mainlogic.h"
+//#include <QDebug>
+
 
 class MyThread : public QThread
 {
@@ -14,17 +15,15 @@ public:
 
 
 private:
-
-
-    void run();
+    void run(); // переопределённая функция для запуска потока
 
 signals:
-    void pause_th(bool);
-    void send_list_points(const QVector <coordinate> &);
+    void pause_th(bool); // сигнал для приостановки генерации новых точек
+    void send_list_points(const QVector <coordinate> &);  // сигнал со списком новых сгенерированных точек
 
 public slots:
-    void start_th();
-    void stop_th();
+    void start_th(); // слот запуска потока
+    void stop_th();  // слот остановки потока
 
 
 };
